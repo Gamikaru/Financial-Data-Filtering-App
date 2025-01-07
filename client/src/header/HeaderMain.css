@@ -1,0 +1,450 @@
+/* HEADER STYLING */
+.site__header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    /* Adjust as needed */
+    background-color: var(--primary-color);
+    position: fixed;
+    z-index: 1000;
+    /* Below portal content */
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+    /* Ensure it's visible */
+    padding: 10px 0;
+}
+
+.site__header.solid {
+    opacity: 1;
+    /* Maintain full opacity */
+}
+
+/* Portaled Header Content */
+.header-portal-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    /* Make it fixed to viewport for stickiness */
+    top: 25px;
+    /* Adjust as needed */
+    left: 4rem;
+    width: 90%;
+    z-index: 3000;
+    /* Higher than home section and site__header */
+    pointer-events: none;
+    /* Allow background to pass clicks */
+    background: transparent;
+    /* Prevent background overlay */
+}
+
+.header-portal-content>* {
+    pointer-events: auto;
+    /* Enable interactions */
+}
+
+/* Brand */
+.navbar-brand {
+    font-size: 2rem;
+    font-family: "Marcellus", serif;
+    color: var(--text-color-2);
+    text-decoration: none;
+    transition: color 1s ease-in-out;
+}
+
+.navbar-brand:hover {
+    color: var(--accent-color);
+    transition: color 1s ease-in-out;
+}
+
+/* Header Buttons */
+.header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    background-color: transparent;
+    /* Remove background to avoid obstruction */
+    transition: background-color 1s ease-in-out;
+}
+
+/* Menu Links for Large Screens */
+.the_menu-horizontal {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.the_menu-horizontal .menu_item > a {
+    position: relative;
+    color: var(--text-color-2);
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 250ms ease, background-color 250ms ease;
+    padding: 0 15px;
+    border-radius: 5px;
+    /* Added for hover and focus effects */
+    background: transparent;
+    backdrop-filter: none;
+}
+
+.the_menu-horizontal .menu_item > a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.the_menu-horizontal .menu_item > a:hover::after,
+.the_menu-horizontal .menu_item > a:focus::after {
+    width: 100%;
+}
+
+.the_menu-horizontal .menu_item > a:focus {
+    outline: 2px dashed var(--accent-color);
+    outline-offset: 4px;
+}
+
+/* Hover and Focus Effects for Large Screens */
+.the_menu-horizontal .menu_item > a:hover,
+.the_menu-horizontal .menu_item > a:focus {
+    background: rgba(118, 103, 246, 0.2); /* Translucent Accent Color */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    color: var(--secondary-color);
+    /* Optional: Add box-shadow for better visibility */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Menu Links for Small Screens */
+.the_menu .menu_item > a {
+    position: relative;
+    color: var(--text-color-2);
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 1s ease-in-out, background-color 250ms ease;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    background: transparent;
+    backdrop-filter: none;
+}
+
+.the_menu .menu_item > a:focus {
+    outline: 2px dashed var(--accent-color);
+    outline-offset: 4px;
+}
+
+.the_menu .menu_item > a::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    left: 20px;
+    width: 0%;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.the_menu .menu_item > a:hover::after,
+.the_menu .menu_item > a:focus::after {
+    width: 100%;
+}
+
+/* Hover and Focus Effects for Small Screens */
+.the_menu .menu_item > a:hover,
+.the_menu .menu_item > a:focus {
+    background: rgba(118, 103, 246, 0.2); /* Translucent Accent Color */
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    color: var(--primary-color);
+    /* Optional: Add box-shadow for better visibility */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Highlight Active Link with Accent Color */
+.the_menu-horizontal .menu_item.active > a,
+.the_menu .menu_item.active > a {
+    color: var(--accent-color) !important;
+    /* Optional: Maintain background for active link */
+    background: rgba(118, 103, 246, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+/* Hamburger Button */
+.menu__button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    position: relative;
+    z-index: 4000;
+    /* Ensure it's above header portal */
+}
+
+.menu__button:focus {
+    outline: 2px dashed var(--accent-color);
+}
+
+/* Bars within Hamburger */
+.menu__button .bar {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transition: transform 0.4s ease;
+}
+
+.menu__button .bar-left,
+.menu__button .bar-right {
+    position: absolute;
+    width: 60%;
+    height: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    transform-origin: center;
+}
+
+.menu__button .bar-left {
+    left: 0;
+    top: 0;
+    transform: rotate(-30deg);
+}
+
+.menu__button .bar-right {
+    right: 0;
+    top: 0;
+    transform: rotate(30deg);
+}
+
+.menu__button.open .bar-left {
+    transform: rotate(30deg) translateY(3px);
+}
+
+.menu__button.open .bar-right {
+    transform: rotate(-30deg) translateY(3px);
+}
+
+/* Navigation Container */
+.site__navigation {
+    left: 0;
+    top: 0;
+    width: 100%;
+    position: fixed;
+    overflow: visible;
+    z-index: 999;
+}
+
+/* Menu Background for Small Screens */
+.bg__menu {
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    padding: 20px 0;
+    backdrop-filter: blur(10px);
+    background-color: var(--primary-color);
+    transition: background-color 1s ease-in-out;
+}
+
+.menu__wrapper {
+    position: relative;
+    width: 98%;
+    max-width: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: var(--primary-color);
+    transition: background-color 1s ease-in-out;
+}
+
+.the_menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+/* Responsive Adjustments */
+@media only screen and (max-width: 991px) {
+    .site__header {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .menu__wrapper {
+        width: 95%;
+        max-width: none;
+    }
+
+    .the_menu {
+        align-items: center;
+    }
+
+    .the_menu .menu_item > a {
+        font-size: 1.5rem;
+    }
+
+    /* Hide horizontal menu on small screens */
+    .the_menu-horizontal {
+        display: none;
+    }
+
+    .header-buttons {
+        padding: 10px 20px;
+        gap: 10px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+
+    /* Hide hamburger button on large screens */
+    .menu__button {
+        display: none;
+    }
+
+    /* Static navigation for large screens */
+    .site__navigation {
+        position: static;
+        background: transparent;
+    }
+
+    .the_menu {
+        flex-direction: row;
+        gap: 20px;
+        justify-content: flex-end;
+    }
+
+    .the_menu .menu_item > a {
+        padding: 0;
+        border: none;
+        font-size: 1rem;
+    }
+
+    .bg__menu {
+        display: none;
+    }
+
+    .the_menu-horizontal {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: flex-end;
+    }
+
+    .header-buttons {
+        padding: 15px 35px;
+        gap: 20px;
+    }
+}
+
+/* Decorative Site Corners */
+.br-top,
+.br-bottom,
+.br-right,
+.br-left {
+    position: fixed;
+    z-index: 999;
+    /* Below portal content */
+    background: var(--primary-color);
+    transition: background-color 1s ease-in-out;
+}
+
+.br-top {
+    top: 0;
+    height: 10px;
+    left: 0;
+    width: 100%;
+}
+
+.br-bottom {
+    bottom: 0;
+    left: 0;
+    height: 10px;
+    width: 100%;
+}
+
+.br-right {
+    width: 10px;
+    right: 0;
+    top: 0;
+    height: 100%;
+}
+
+.br-left {
+    width: 10px;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+/* Theme-Specific Styles */
+[data-theme="dark"] {
+    /* Hover and Focus Effects for Large Screens */
+    .the_menu-horizontal .menu_item > a:hover,
+    .the_menu-horizontal .menu_item > a:focus {
+        background: rgba(118, 103, 246, 0.2); /* Translucent Accent Color */
+        backdrop-filter: blur(5px); /* Frosted glass effect */
+        color: var(--secondary-color);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Hover and Focus Effects for Small Screens */
+    .the_menu .menu_item > a:hover,
+    .the_menu .menu_item > a:focus {
+        background: rgba(118, 103, 246, 0.2); /* Translucent Accent Color */
+        backdrop-filter: blur(5px); /* Frosted glass effect */
+        color: var(--primary-color);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Highlight Active Link with Accent Color */
+    .the_menu-horizontal .menu_item.active > a,
+    .the_menu .menu_item.active > a {
+        background: rgba(118, 103, 246, 0.2);
+        backdrop-filter: blur(5px);
+        color: var(--secondary-color) !important;
+        font-weight: bold;
+    }
+}
+
+[data-theme="light"] {
+    /* Hover and Focus Effects for Large Screens */
+    .the_menu-horizontal .menu_item > a:hover,
+    .the_menu-horizontal .menu_item > a:focus {
+        background: rgba(118, 103, 246, 0.2); /* Translucent Accent Color */
+        backdrop-filter: blur(5px); /* Frosted glass effect */
+        color: var(--secondary-color);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Hover and Focus Effects for Small Screens */
+    .the_menu .menu_item > a:hover,
+    .the_menu .menu_item > a:focus {
+        background: rgba(118, 103, 246, 0.2); /* Translucent Accent Color */
+        backdrop-filter: blur(5px); /* Frosted glass effect */
+        color: var(--primary-color);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Highlight Active Link with Accent Color */
+    .the_menu-horizontal .menu_item.active > a,
+    .the_menu .menu_item.active > a {
+        background: rgba(118, 103, 246, 0.2);
+        backdrop-filter: blur(5px);
+        color: var(--primary-color) !important;
+        font-weight: bold;
+    }
+}

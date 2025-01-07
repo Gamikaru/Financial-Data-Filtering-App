@@ -1,0 +1,148 @@
+/* Social Icons Styling */
+.stick_follow_icon {
+    top: 50%;
+    left: 30px;
+    width: 20px;
+    height: 200px;
+    position: fixed;
+    margin-top: -100px;
+    z-index: 9999;
+    /* Reduced z-index to prevent overlapping */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.stick_follow_icon ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.stick_follow_icon svg {
+    width: 1.3em;
+    height: 1.3em;
+    fill: var(--secondary-color);
+}
+
+.stick_follow_icon ul li {
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 10px;
+    transition: all 0.3s;
+}
+
+.stick_follow_icon ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.stick_follow_icon ul li a:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+/* Hide desktop social icons when mobile toggle is active */
+@media only screen and (max-width: 991px) {
+    .stick_follow_icon:not(.mobile) {
+        display: none;
+    }
+
+    /* Mobile Social Icons */
+    .stick_follow_icon.mobile {
+        display: none;
+        /* Hidden by default */
+    }
+
+    .stick_follow_icon.mobile.open {
+        display: flex;
+        position: fixed;
+        right: 20px;
+        top: 65%;
+        transform: translateY(-50%);
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        padding-inline: 15px;
+        border-radius: 8px;
+        opacity: 1;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        height: auto;
+    }
+
+
+    .stick_follow_icon.mobile.open {
+        left: auto;
+        /* Override left positioning */
+        right: 20px;
+        /* Position on the right */
+    }
+
+    .stick_follow_icon.mobile.open {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .stick_follow_icon.mobile {
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    .mobile_social_toggle {
+        display: block;
+        position: fixed;
+        right: 10px;
+        bottom: 20px;
+        background: none;
+        color: var(--secondary-color);
+        padding: 12px;
+        border-radius: 50%;
+        z-index: 10000;
+        cursor: pointer;
+        transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        font-size: 1.5rem;
+        border: none;
+        /* Remove border */
+        box-shadow: none;
+        /* Remove shadow */
+    }
+
+    .mobile_social_toggle:hover {
+        /* background-color: var(--secondary-color); */
+    }
+
+    .mobile_social_toggle svg {
+        stroke-width: 1.4;
+    }
+
+    .stick_follow_icon svg {
+        width: 1.2em;
+        height: 1.2em;
+        stroke-width: 1.2;
+        transition: stroke 0.3s ease, transform 0.3s ease;
+    }
+
+    .stick_follow_icon.mobile ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stick_follow_icon.mobile ul li {
+        margin: 10px 0;
+    }
+
+    .stick_follow_icon.mobile ul li a {
+        width: 32px;
+        height: 32px;
+    }
+}

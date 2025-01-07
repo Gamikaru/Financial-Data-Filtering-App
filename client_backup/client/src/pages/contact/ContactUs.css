@@ -1,0 +1,127 @@
+
+
+/* Contact Container */
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--bg-color);
+    font-family: var(--font-secondary);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Title */
+.contact-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-primary);
+}
+
+/* Alert Custom */
+.alert-custom {
+    background-color: var(--alert-success-bg);
+    border-color: var(--alert-success-border);
+    color: var(--alert-success-text);
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Contact Form */
+.contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Form Group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form Label */
+.form-label {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    font-family: var(--font-primary);
+}
+
+/* Form Control */
+.form-control {
+    padding: 0.875rem 1rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: var(--font-secondary);
+}
+
+/* Form Control Focus */
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+/* Submit Button */
+.btn-submit {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: var(--font-primary);
+}
+
+/* Submit Button Hover */
+.btn-submit:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Disabled Button */
+.btn-submit:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Loading Bar */
+.loading-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 10px;
+    z-index: 999999999;
+    background: var(--text-color);
+    transform: translateX(100%);
+    animation: shift-rightwards 1s ease-in-out infinite;
+    animation-delay: 0.3s;
+}
+
+/* Shift Rightwards Animation */
+@keyframes shift-rightwards {
+    0% {
+        transform: translateX(-100%);
+    }
+    40% {
+        transform: translateX(0%);
+    }
+    60% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}

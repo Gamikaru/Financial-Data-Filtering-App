@@ -1,0 +1,18 @@
+
+
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Raleway', sans-serif;
+    transition: background-color 1s ease-in-out, color 1s ease-in-out;
+}
+
+
+
+/* Custom Cursor */
+.cursor__dot {
+    /* Add cursor styles if needed */
+}

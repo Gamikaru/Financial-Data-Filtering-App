@@ -1,0 +1,156 @@
+/*  */
+
+/* About Container */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* About Header */
+.about-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.about-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: var(--font-primary);
+}
+
+.about-divider {
+    width: 50px;
+    height: 4px;
+    background-color: var(--secondary-color);
+    margin: 0.5rem auto 0;
+    border: none;
+    border-radius: 2px;
+}
+
+/* About Content */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.about-section {
+    background-color: var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section-subtitle {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 0.75rem;
+    font-family: var(--font-primary);
+}
+
+.section-description {
+    font-size: 1rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Skills Section */
+.skills-section {
+    margin-top: 2rem;
+}
+
+.skills-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: var(--font-primary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.skill-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-family: var(--font-primary);
+}
+
+.skill-bar {
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.data-analysis {
+    background-color: #4a90e2; /* Bright Blue */
+}
+
+.user-experience {
+    background-color: #50e3c2; /* Vibrant Turquoise */
+}
+
+.mobile-optimization {
+    background-color: #f5a623; /* Orange */
+}
+
+/* Animation for Skill Bars */
+@keyframes fillBar {
+    from {
+        width: 0%;
+    }
+    to {
+        width: var(--skill-width);
+    }
+}
+
+.skill-bar::after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 0%;
+    background-color: inherit;
+    animation: fillBar 1.2s forwards;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .about-content {
+        flex-direction: row;
+    }
+
+    .about-section {
+        flex: 1;
+    }
+
+    .skills-list {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .skill-item {
+        flex: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    .skills-section {
+        padding: 0 1rem;
+    }
+}
