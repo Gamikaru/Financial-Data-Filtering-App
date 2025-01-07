@@ -1,28 +1,63 @@
-# Financial Data Filtering App
+# InvestiLearn - The Duolingo of Investing and Stocks
 
-A single-page React application that reuses your existing portfolio layout—and adds a financial data filter feature for Apple Inc. (AAPL). The application fetches yearly income statements using the Financial Modeling Prep API and allows you to filter/sort key metrics.
+## Overview
+
+InvestiLearn is a financial data filtering application that allows users to analyze and learn about Apple Inc.'s financial performance. Inspired by Duolingo's user-friendly approach to learning, InvestiLearn provides an intuitive interface for filtering and sorting key financial metrics.
 
 ## Features
-1. **Fetch & Display**
-   - Fetch annual income statements for AAPL.
-   - Display: Date, Revenue, Net Income, Gross Profit, EPS, Operating Income.
 
-2. **Filtering**
-   - Date Range (e.g., 2020–2024).
-   - Revenue Range.
-   - Net Income Range.
+- **Fetch & Display**: Retrieve annual income statements for Apple Inc. and display them in a comprehensive table.
+- **Filtering**: Filter data based on date range, revenue range, and net income range.
+- **Sorting**: Sort data by date, revenue, or net income in ascending or descending order.
+- **Responsive Design**: Mobile-friendly interface for seamless use across devices.
+- **Theme Toggle**: Switch between light and dark modes.
 
-3. **Sorting**
-   - Date ascending/descending.
-   - Revenue ascending/descending.
-   - Net Income ascending/descending.
+## Technologies Used
 
-4. **Responsive**
-   - Mobile-friendly design.
+- **Frontend**: React, TailwindCSS, Framer Motion
+- **Icons**: React Icons
+- **Animations**: Framer Motion
+- **Routing**: Single Page Application
+- **Deployment**: [Your Preferred Service]
 
-## Quick Start
-1. **Clone & Install**
-   ```bash
-   git clone https://github.com/yourusername/financial-data-filtering-app.git
-   cd financial-data-filtering-app
-   npm install
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm installed on your machine.
+- A free API key from [Financial Modeling Prep](https://financialmodelingprep.com/).
+
+### Installation
+
+1. **Clone the Repository**
+
+    ```bash
+    git clone git@github.com:Gamikaru/Financial-Data-Filtering-App.git
+    cd Financial-Data-Filtering-App
+    ```
+
+2. **Install Dependencies**
+
+    ```bash
+    npm install
+    ```
+
+3. **Configure Environment Variables**
+
+    Create a `.env` file in the root directory and add your Financial Modeling Prep API key:
+
+    ```
+    REACT_APP_API_KEY=your_fmp_api_key
+    ```
+
+4. **Run the Application Locally**
+
+    ```bash
+    npm start
+    ```
+
+    The app will run on `http://localhost:3000`.
+
+## Deployment
+
+Deploy the application using your preferred service such as Vercel, Netlify, or GitHub Pages. Ensure the `.env` variables are properly set in the deployment environment.
